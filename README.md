@@ -36,4 +36,4 @@ Um projeto desenvolvido em React.js
 <!-- UL --->
 # Imagem 
 
-![alt text](https://github.com/HEINRICK7/Cryptocurrency-Viewer/blob/master/src/assets/crypto.svg?raw=true/)
+![alt text](https://github.com/HEINRICK7/Cryptocurrency-Viewer/blob/master/src/assets/criptoViewer.png?raw=true/)
