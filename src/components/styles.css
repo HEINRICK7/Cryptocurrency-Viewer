@@ -1,28 +1,16 @@
-ul.pagination {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  text-align: center;
+
+.coin {
+  width: auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+} 
+.coin_image {
+  width: 20%;
+  margin: 20px;
 }
 
-ul.pagination li {display: inline}
-
-ul.pagination li a {
-  color: rgb(252, 248, 248);
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd;
-  font-size: 22px;
-  align-items: center; text-align: center;
+.coin_symbol {
+  margin: -20px 0 0 25px;
 }
-
-ul.pagination li a.active {
-  background-color: #4CAF50;
-  color: white;
-  border: 1px solid #4CAF50;
-}
-
-ul.pagination li a:hover:not(.active) {background-color: #ddd;}

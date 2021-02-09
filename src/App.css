@@ -5,36 +5,10 @@
     font-family: 'Andika New Basic', sans-serif;
     font-weight: bold;
 }
-.App {
+.coin_container_app {
     padding: 50px;
-    background-color: rgb(7, 152, 189);
-} 
-.App h1 {
-    font-family: 'Quantico', sans-serif;
-    color: #ffffff;
-    font-weight: 700;
-
-    font-size: 50px;
-    align-items: center;
-    text-align: center;
-}
-.App h3 {
-    font-family: 'Andika New Basic', sans-serif;
-    color: rgb(8, 135, 167);
-    font-weight: 700;
-    margin-top:-75px;
-    margin-left: 170px;
-    margin-bottom: 50px;
-
-}
-.icon_inline h3{
-
-    font-family: 'Andika New Basic', sans-serif;
-    font-weight: bold;
-
-    color: rgb(8, 135, 167);
-
-    margin-top:-30px;
-    margin-left: 70px;
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 10px;
+    row-gap: 15px;
 }
