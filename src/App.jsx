@@ -1,7 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import './App.css'
 import Coin from './components/Coin'
+
+
 
 
 const  App = () => {
@@ -26,7 +28,7 @@ const  App = () => {
 
   const filteredCoins = coins.filter(coin => 
     coin.name.toLowerCase().includes(search.toLowerCase()))
-
+  
   return (
     <>
     <div className="App">
@@ -52,13 +54,13 @@ const  App = () => {
             symbol={coin.symbol}
             volume={coin.market_cap}
             price={coin.current_price}
+            high_24h = {coin.high_24h}
 
           />
         )
       })}
     </div>
-    </>
-    
+    </> 
   );
 }
 
