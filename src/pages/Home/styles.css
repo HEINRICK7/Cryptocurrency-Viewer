@@ -1,0 +1,37 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@400;700&family=Quantico:wght@700&display=swap');
+
+*{
+    font-family: 'Andika New Basic', sans-serif;
+    font-weight: bold;
+}
+.coin_container_app {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.App {
+    text-align: center;
+    color: linear-gradient(to right, #182848, #4b6cb7);
+}
+.App h1 {
+    background-color: linear-gradient(to right, #182848, #4b6cb7);
+}
+.coin-search input {
+    width: 300px;
+    padding: 20px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    color: #FFFF;
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    outline-style: none;
+}
+.coin-search input::placeholder {
+    color: #FFFF;
+}

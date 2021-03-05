@@ -1,0 +1,7 @@
+.info_coin {
+    margin: 180px 50px 0 50px;
+    padding: 30px;
+    width: 500px;
+    float: right;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
