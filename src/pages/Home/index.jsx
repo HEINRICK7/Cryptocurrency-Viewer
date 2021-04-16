@@ -34,7 +34,7 @@ const  App = () => {
        <form>
          <input 
          type="text" 
-         placeholder="pesquizar" 
+         placeholder="pesquisar" 
          className="coin-input"
          onChange={handleChange}
          />
