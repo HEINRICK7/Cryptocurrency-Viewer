@@ -1,20 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 
 import './styles.css'
 
-import * as Recharts from "recharts/umd/Recharts";
+import { AreaChart, Area, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const CoinDetail = () => {
 
     let {key} = useParams();
 
-    const AreaChart = Recharts.AreaChart;
-    const Area = Recharts.Area;
-   
-    const Tooltip = Recharts.Tooltip;
-    const ResponsiveContainer = Recharts.ResponsiveContainer;
     const [chartDay, setChartDay] = useState([]);
     const [chartWeek, setChartWeek] = useState([]);
     const [chartYear, setChartYear] = useState([]);
@@ -40,7 +35,7 @@ const CoinDetail = () => {
   },[key])
 
   useEffect(() => {
-    axios.get(`https://api.coingecko.com/api/v3/coins/${key}/market_chart?vs_currency=usd&days=30`)
+    axios.get(`https://api.coingecko.com/api/v3/coins/${key}/market_chart?vs_currency=usd&days=360`)
       .then(response => {
         setChartYear(response.data.prices)
   
@@ -52,27 +47,27 @@ const CoinDetail = () => {
     return (
           <div className="container_coin">
           <div className="chart">
-          <div className="info">
+            <div className="info">
               <h5>Day</h5>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <AreaChart data={chartDay.map(result =>({
-            volume: result[0],
-            price: result[1].toFixed(2)
-        }))}
-        margin={{top: 100}}
-        >
-          <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-            </linearGradient>
-          </defs>
-          <Tooltip />
-         
-        <Area type="monotone" dataKey="price" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-       
-      </AreaChart>
+            <ResponsiveContainer width="100%" height={500}>
+              <AreaChart 
+              width={500}
+              height={60}
+              data={chartDay.map(result =>({
+                  price: result[1].toFixed(2)
+              }))}
+              margin={{
+                top: 5,
+                right: 2,
+                left: 2,
+                bottom: 5,
+              }}
+              >
+                <Tooltip />
+                <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
+                <Legend />
+              </AreaChart>
             </ResponsiveContainer>
           </div>
 
@@ -80,24 +75,24 @@ const CoinDetail = () => {
           <div className="info">
               <h5>Week</h5>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <AreaChart data={chartWeek.map(result =>({
-            volume: result[0],
-            price: result[1].toFixed(2)
-        }))}
-        margin={{top: 100}}
-       >
-        <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-            </linearGradient>
-         </defs>
-       
-        <Tooltip />
-        <Area type="monotone" dataKey="price" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-       
-      </AreaChart>
+            <ResponsiveContainer width="100%" height={500}>
+              <AreaChart 
+              width={200}
+              height={60}
+              data={chartWeek.map(result =>({
+                  price: result[1].toFixed(2)
+              }))}
+              margin={{
+                top: 5,
+                right: 2,
+                left: 2,
+                bottom: 5,
+              }}
+              >
+                <Tooltip />
+                <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
+                <Legend />
+              </AreaChart>
             </ResponsiveContainer>
           </div>
 
@@ -105,25 +100,26 @@ const CoinDetail = () => {
             <div className="info">
               <h5>Year</h5>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <AreaChart data={chartYear.map(result =>({
-            volume: result[0],
-            price: result[1].toFixed(2)
-        }))}
-        margin={{top: 100}}
-        >
-        <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-            </linearGradient>
-         </defs>
-        <Tooltip />
-        <Area type="monotone" dataKey="price" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-       
-      </AreaChart>
+            <ResponsiveContainer width="100%" height={500}>
+              <AreaChart 
+              width={200}
+              height={60}
+              data={chartYear.map(result =>({
+                  price: result[1].toFixed(2)
+              }))}
+              margin={{
+                top: 400,
+                right: 2,
+                left: 2,
+                bottom: 5,
+              }}
+              >
+                <Tooltip />
+                <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
+                <Legend />
+              </AreaChart>
             </ResponsiveContainer>
-          </div>  
+            </div>
           </div>
         
     )

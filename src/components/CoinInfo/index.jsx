@@ -23,11 +23,12 @@ const CoinInfo = () => {
     }, [key]);
          
     return (
-        <div>
-           <p className="info_coin">{coinInfo.map(res =>
-             res.description.pt)
-             
-             }</p>
+        <div className="info_coin"> 
+            <h1 style={{textAlign:'center'}}> {key} </h1>
+           <div className="description">
+              
+               {coinInfo.map(res =>res.description.pt)}
+            </div>
         </div>
     )
 }
